@@ -1,0 +1,84 @@
+/******************************************************************************
+                            Stylesheet for Boilerplate
+******************************************************************************/
+
+/* Root Value Stylings */
+:root {
+    --std-margin: 3rem;
+    --font-size: 1.45rem;
+    --font-color: #a70d9a;
+    --background-color: #89cff0;
+}
+
+/* Body Stylings */
+body {
+    text-transform: lowercase;
+    background-color: var(--background-color);
+    font-size: var(--font-size);
+    font-family: sans-serif;
+    min-height: 100vh;
+    margin: 0rem 2.5rem;
+    color: var(--font-color);
+    padding: 2rem 0;
+    line-height: 1.5;
+}
+
+.canvas {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: var(--std-margin);
+    bottom: 3rem;
+    z-index: 2;
+}
+
+.wish {
+    grid-column: span 3;
+}
+
+.two {
+    grid-row: 2 / 3;
+}
+
+.heart {
+   z-index : 1;
+   animation: heartfade 6s linear;
+   position : absolute;
+}
+
+.heart:before,
+.heart:after {
+   content : "";
+   background-color : #fc2a62;
+   position : absolute;
+   height : 30px;
+   width : 45px;
+   border-radius : 15px 0px 0px 15px;
+}
+.heart:before {
+   transform : rotate(45deg);
+}
+.heart:after {
+   left : 10.5px;
+   transform : rotate(135deg);
+}
+
+@keyframes heartfade {
+   0% {
+    opacity : 1;
+   }
+   50% {
+    opacity : 0;
+   }
+}
